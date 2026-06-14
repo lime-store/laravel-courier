@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('address_form');
+            $table->string('address_from');
             $table->string('address_to');
             $table->enum('status', ['available', 'in_progress', 'done', 'cancelled'])
                     ->default('available');
