@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'Asia/Baku',
+    'timezone' => env('APP_TIMEZONE', 'Asia/Baku'),
 
     /*
     |--------------------------------------------------------------------------
