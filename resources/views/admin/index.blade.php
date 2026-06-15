@@ -26,7 +26,7 @@
                 <td>{{ $order->id }}</td>
                 <td>{{ $order->address_from }}</td>
                 <td>{{ $order->address_to }}</td>
-                <td>{{ $order->order_date }}</td>
+                <td>{{ \Carbon\Carbon::parse($order->order_date)->setTimezone('Asia/Baku')->format('d.m.Y H:i') }}</td>
             </tr>
         @empty
             <tr><td colspan="4" class="text-center text-muted">Нет заказов</td></tr>
@@ -47,7 +47,7 @@
                 <td>{{ $order->address_from }}</td>
                 <td>{{ $order->address_to }}</td>
                 <td>{{ $order->courier->name ?? '—' }}</td>
-                <td>{{ $order->order_date }}</td>
+                <td>{{ \Carbon\Carbon::parse($order->order_date)->setTimezone('Asia/Baku')->format('d.m.Y H:i') }}</td>
             </tr>
         @empty
             <tr><td colspan="5" class="text-center text-muted">Нет заказов</td></tr>
@@ -73,7 +73,7 @@
                     </span>
                 </td>
                 <td>{{ $order->courier->name ?? '—' }}</td>
-                <td>{{ $order->order_date }}</td>
+                <td>{{ \Carbon\Carbon::parse($order->order_date)->setTimezone('Asia/Baku')->format('d.m.Y H:i') }}</td>
             </tr>
         @empty
             <tr><td colspan="6" class="text-center text-muted">Нет заказов</td></tr>

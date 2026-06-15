@@ -20,7 +20,7 @@
                 <td>{{ $order->id }}</td>
                 <td>{{ $order->address_from }}</td>
                 <td>{{ $order->address_to }}</td>
-                <td>{{ $order->order_date }}</td>
+                <td>{{ \Carbon\Carbon::parse($order->order_date)->setTimezone('Asia/Baku')->format('d.m.Y H:i') }}</td>
                 <td>
                     <form action="{{ route('courier.take', $order) }}" method="POST">
                         @csrf
@@ -46,7 +46,7 @@
                 <td>{{ $order->id }}</td>
                 <td>{{ $order->address_from }}</td>
                 <td>{{ $order->address_to }}</td>
-                <td>{{ $order->order_date }}</td>
+                <td>{{ \Carbon\Carbon::parse($order->order_date)->setTimezone('Asia/Baku')->format('d.m.Y H:i') }}</td>
                 <td>
                     {{-- Одна форма с двумя кнопками, каждая отправляет своё значение --}}
                     <form action="{{ route('courier.status', $order) }}" method="POST" class="d-flex gap-2">
